@@ -7,14 +7,14 @@ use Slim\Http\Response;
 use Psr\Container\ContainerInterface;
 
 /**
- * 
+ *
  */
 class AdminController
 {
     
     protected $container;
    
-    public function __construct(ContainerInterface $container) 
+    public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
     }
@@ -33,5 +33,4 @@ class AdminController
     
         return $this->container->renderer->render($response, 'layout.phtml', array('bodyParse' => 'admin.phtml'));
     }
-
 }

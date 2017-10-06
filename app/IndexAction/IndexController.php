@@ -20,9 +20,9 @@ class IndexController
     /**
      * [__construct description]
      *
-     * @param ContainerInterface $container  
+     * @param ContainerInterface $container
      */
-    public function __construct(ContainerInterface $container) 
+    public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
     }
@@ -30,20 +30,21 @@ class IndexController
     /**
      * [__invoke description]
      *
-     * @param Request  $request  
-     * @param Response $response 
-     * @param array    $args 
-     *    
-     * @return Response            
-     */    
+     * @param Request  $request
+     * @param Response $response
+     * @param array    $args
+     *
+     * @return Response
+     */
     public function __invoke(Request $request, Response $response, array $args)
     {
     
         return $this->container->renderer
             ->render(
-                $response, 'layout.phtml', array(
+                $response,
+                'layout.phtml',
+                array(
                     'bodyParse' => 'index.phtml')
             );
     }
-
 }
