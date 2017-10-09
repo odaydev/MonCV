@@ -4,6 +4,19 @@
 
 $container = $app->getContainer();
 
+$container['view'] = function ($c) {
+    $view = new \Slim\Views\Twig('templates/', [
+        'cache' => 'path/to/cache'
+    ]);
+	    $settings = $c->get('settings')['view'];    
+    // var_dump($settings); die();
+    // Instantiate and add Slim specific extension
+    $basePath = rtrim(str_ireplace('index.php', '', $c['request']->getUri()->getBasePath()), '/');
+    $view->addExtension(new Slim\Views\TwigExtension($c['router'], $basePath));
+
+    return $view;
+};
+
 // view renderer
 $container['renderer'] = function ($c) {
     $settings = $c->get('settings')['renderer'];

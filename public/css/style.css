@@ -1,3 +1,8 @@
+body,html{
+    height: 100%;
+    background-color: #212121;
+  }
+
 .bd{
     border : 1px solid black;
 }
@@ -6,13 +11,21 @@
     right: 0;
 }
 .bubble{
-    border: 3px solid;
-    border-radius: 10px;
+    border-radius: 30px;
     width: 550px;
-    height: 250px;
-    margin: auto;
-
+    margin:15px auto 15px auto;
     font-size: 12px;
+    text-align: center;
+    padding: 5px;
+}
+.left{
+  margin-left:15px;
+  background-color: #0287D0;
+}
+.right{
+  margin-right:150px;
+  background-color: #FEEA3B;
+  
 }
 
 

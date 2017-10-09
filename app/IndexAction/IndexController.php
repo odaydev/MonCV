@@ -39,10 +39,10 @@ class IndexController
     public function __invoke(Request $request, Response $response, array $args)
     {
     
-        return $this->container->renderer
+        return $this->container->view
             ->render(
                 $response,
-                'layout.phtml',
+                'index.twig',
                 array(
                     'bodyParse' => 'index.phtml')
             );
