@@ -25,6 +25,8 @@ require __DIR__ . '/../src/middleware.php';
 
 // Register routes
 require __DIR__ . '/../src/routes.php';
-
+$pdo = $app->getContainer()->db;
+// var_dump($pdo); 
+// phpinfo();die();
 // Run app
 $app->run();

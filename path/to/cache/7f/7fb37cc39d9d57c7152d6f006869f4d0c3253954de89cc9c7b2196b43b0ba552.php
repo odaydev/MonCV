@@ -7,16 +7,30 @@ class __TwigTemplate_8a888af0cdea0702e2bd9ebab5b86c42f730c30aa2264e60e3b06166faf
     {
         parent::__construct($env);
 
-        $this->parent = false;
-
+        // line 1
+        $this->parent = $this->loadTemplate("layout.twig", "index.twig", 1);
         $this->blocks = array(
+            'body' => array($this, 'block_body'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "layout.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "<div class=\"container-fluid\">
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    public function block_body($context, array $blocks = array())
+    {
+        // line 4
+        echo "
+
+<div class=\"container-fluid\">
 
 \t
 \t<div class=\"row\">
@@ -40,24 +54,26 @@ class __TwigTemplate_8a888af0cdea0702e2bd9ebab5b86c42f730c30aa2264e60e3b06166faf
 \t</div>
 \t<div class=\"row\">
 \t
-\t\t<div class=\"cv-forming bubble left\">\t\t
-\t\t\t<P>
-\t\t\t\t<h4>Diplômes & Formations</h4>
-\t\t\t\tCertification Techniques de développement web / WEB FORCE 3 Paris 
-\t\t\t\tOctobre 2015 - Février 2016<br>
-\t\t\t\tCertificat de Compétences Opquast Certified Qualité Web - Bonnes
-\t\t\t\tpratiques (score 575)<br>
-\t\t\t\tZend PHP 5 certification / IP Formation Paris<br>
-\t\t\t\t2009 - 2010<br>
-\t\t\t\tFormation PHP/MYSQL / G2R Paris
-\t\t\t\t2009 - 2010<br>
-\t\t\t\tBTS Informatique de Gestion (option développeur d’application) / Lycée
-\t\t\t\tVoillaume AULNAY-SOUS-BOIS
-\t\t\t\t2006 - 2007<br>
+\t\t<div class=\"cv-forming bubble left container\">\t\t
+\t\t\t
+\t\t\t\t<dl>
+\t\t\t\t\t<dt>Diplômes & Formations</dt>
+\t\t\t\t\t<dd>Certification Techniques de développement web / WEB FORCE 3 Paris 
+\t\t\t\tOctobre 2015 - Février 2016</dd>
+\t\t\t\t<dd>Certificat de Compétences Opquast Certified Qualité Web - Bonnes
+\t\t\t\tpratiques (score 575)</dd>
+\t\t\t\t<dd>Zend PHP 5 certification / IP Formation Paris</dd>
+\t\t\t\t<dd>2009 - 2010</dd>
+\t\t\t\t<dd>Formation PHP/MYSQL / G2R Paris
+\t\t\t\t2009 - 2010</dd>
+\t\t\t\t<dd>BTS Informatique de Gestion (option développeur d’application) / Lycée
+\t\t\t\tVoillaume AULNAY-SOUS-BOIS</dd>
+\t\t\t\t<dd>2006 - 2007</dd>
 \t\t\t\tBaccalauréat Sciences et Technologies Tertiaire (option Informatique de
 \t\t\t\tGestion) / Lycée Charles de Gaulle LONGPERRIER
 \t\t\t\t2004 - 2005
-\t\t\t</P>\t\t
+\t\t\t</dl>
+\t\t\t\t\t
 \t\t</div>
 \t</div>
 \t<div class=\"row\">
@@ -115,7 +131,9 @@ class __TwigTemplate_8a888af0cdea0702e2bd9ebab5b86c42f730c30aa2264e60e3b06166faf
 \t
 \t</div>
 
-</div>";
+</div>
+
+";
     }
 
     public function getTemplateName()
@@ -123,13 +141,18 @@ class __TwigTemplate_8a888af0cdea0702e2bd9ebab5b86c42f730c30aa2264e60e3b06166faf
         return "index.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 1,);
+        return array (  31 => 4,  28 => 3,  11 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "index.twig", "C:\\Users\\DEV_'Oday'\\Desktop\\sites\\MonCV\\templates\\index.twig");
+        return new Twig_Source("", "index.twig", "C:\\Users\\odaydev\\Desktop\\Sites\\MonCV\\templates\\index.twig");
     }
 }

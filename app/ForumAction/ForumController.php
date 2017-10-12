@@ -31,6 +31,6 @@ class ForumController
     public function __invoke(Request $request, Response $response, array $args) : Response
     {
     
-        return $this->container->renderer->render($response, 'layout.phtml', array('bodyParse' => 'forum.phtml'));
+        return $this->container->view->render($response, 'forum.twig');
     }
 }

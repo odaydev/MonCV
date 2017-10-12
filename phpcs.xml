@@ -7,7 +7,8 @@
 	<args name="colors"/>
 	<args value="p"/>
 
-	<file>app</file>
+	<file>app/</file>
+	<file>src/</file>
 	<file>public/css/style.css</file>
 	<file>templates</file>
 

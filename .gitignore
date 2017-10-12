@@ -1,4 +1,6 @@
 /node_modules/
 /vendor/
 /logs/*
+/path/*
+/pma/*
 !/logs/README.md

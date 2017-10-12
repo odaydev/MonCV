@@ -1,5 +1,7 @@
 {% extends "layout.twig" %}
 
+{% block body %}
+
 
 <div class="container-fluid">
 
@@ -25,24 +27,26 @@
 	</div>
 	<div class="row">
 	
-		<div class="cv-forming bubble left">		
-			<P>
-				<h4>Diplômes & Formations</h4>
-				Certification Techniques de développement web / WEB FORCE 3 Paris 
-				Octobre 2015 - Février 2016<br>
-				Certificat de Compétences Opquast Certified Qualité Web - Bonnes
-				pratiques (score 575)<br>
-				Zend PHP 5 certification / IP Formation Paris<br>
-				2009 - 2010<br>
-				Formation PHP/MYSQL / G2R Paris
-				2009 - 2010<br>
-				BTS Informatique de Gestion (option développeur d’application) / Lycée
-				Voillaume AULNAY-SOUS-BOIS
-				2006 - 2007<br>
+		<div class="cv-forming bubble left">
+				
+				<dl>
+					<dt>Diplômes & Formations</dt>
+					<dd>Certification Techniques de développement web / WEB FORCE 3 Paris 
+				Octobre 2015 - Février 2016</dd>
+				<dd>Certificat de Compétences Opquast Certified Qualité Web - Bonnes
+				pratiques (score 575)</dd>
+				<dd>Zend PHP 5 certification / IP Formation Paris</dd>
+				<dd>2009 - 2010</dd>
+				<dd>Formation PHP/MYSQL / G2R Paris
+				2009 - 2010</dd>
+				<dd>BTS Informatique de Gestion (option développeur d’application) / Lycée
+				Voillaume AULNAY-SOUS-BOIS</dd>
+				<dd>2006 - 2007</dd>
 				Baccalauréat Sciences et Technologies Tertiaire (option Informatique de
 				Gestion) / Lycée Charles de Gaulle LONGPERRIER
 				2004 - 2005
-			</P>		
+			</dl>
+					
 		</div>
 	</div>
 	<div class="row">
@@ -101,3 +105,6 @@
 	</div>
 
 </div>
+
+{% endblock %}
+
