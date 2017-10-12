@@ -7,9 +7,11 @@ use App\AdminAction\AdminController;
 use App\ForumAction\ForumController;
 
 // Routes GET
-
 $app->get('/', IndexController::class);
 
-$app->get('/admin', AdminController::class);
+$app->get('/register', RegisterController::class);
 
 $app->get('/forum', ForumController::class);
+
+// Routes POST
+$app->post('/admin', AdminController::class);
