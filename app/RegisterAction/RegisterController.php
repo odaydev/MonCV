@@ -39,6 +39,17 @@ class RegisterController
     public function __invoke(Request $request, Response $response, array $args) : Response
     {
     
-        return $this->container->view->render($response, 'register.twig');
+        $fb = $this->container->fb;
+
+        $helper = $fb->getRedirectLoginHelper();
+
+        //$permissions = ['email']; // Optional permissions
+        $loginUrl = $helper->getLoginUrl('http://localhost:8080/public/include/fb-callback.php');
+        // $loginUrl = htmlspecialchars($loginUrl);
+        // var_dump($loginUrl); die();
+
+       
+
+        return $this->container->view->render($response, 'register.twig', array('FBloginUrl' => $loginUrl, 'GloginUrl' => $gLoginUrl));
     }
 }

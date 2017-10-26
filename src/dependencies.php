@@ -4,6 +4,21 @@
 
 $container = $app->getContainer();
 
+//Facebook Connect
+$container['fb'] = function ($c){
+
+    $fb = new \Facebook\Facebook([
+      'app_id' => '121679101854559',
+      'app_secret' => '51dfe5420290036ecf98b7c0bccf73f3',
+      'default_graph_version' => 'v2.10',
+      //'default_access_token' => '{access-token}', // optional
+    ]);
+
+    return $fb;
+
+};
+
+// Instanciate PDO
 $container['db'] = function ($c) {
     try {
         $pdo = new \PDO('mysql:host=localhost;dbname=moncv', 'root', 'root');
@@ -44,4 +59,15 @@ $container['logger'] = function ($c) {
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
     return $logger;
+};
+
+// Service factory for the ORM
+$container['orm'] = function ($container) {
+    $capsule = new \Illuminate\Database\Capsule\Manager;
+    $capsule->addConnection($container['settings']['db']);
+
+    $capsule->setAsGlobal();
+    $capsule->bootEloquent();
+
+    return $capsule;
 };
